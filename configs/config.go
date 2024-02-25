@@ -8,7 +8,7 @@ import (
 var DB *gorm.DB
 
 func InitDB() (*gorm.DB, error) {
-	db, err := gorm.Open("mysql", "root:password@tcp(127.0.0.1:3306)/ecomm?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "root@tcp(localhost:3306)/ecomm?charset=utf8&parseTime=True&loc=Local") // Jika Anda ingin menggunakan database MySQL, silakan sesuaikan dengan konfigurasi database Anda sesuai username, password, host, dan database yang digunakan, contohnya username: root, password: (kosong), host: localhost, dan database: ecomm
 	if err != nil {
 		return nil, err
 	}
